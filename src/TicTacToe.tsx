@@ -1,40 +1,6 @@
-// import { StyleSheet, Text, View } from 'react-native'
-// import React from 'react'
-
-// export default function Banner() {
-//   return (
-//     <View>
-//         <View style={styles.Container}>
-//             <Text style={styles.ContainerTxt}>Tik Tak</Text>
-//         </View>
-//     </View>
-//   )
-// }
-
-// const styles = StyleSheet.create({
-//     Container:{
-//         width:350,
-//         height:50,
-//         backgroundColor:'#0A3D62',
-//         margin:30,
-//         marginTop:10,
-//         borderRadius:2,
-//         borderBottomRightRadius:80,
-//         borderTopLeftRadius:80    
-//     },
-
-//     ContainerTxt:{
-//         fontSize:25,
-//         textAlign:'center',
-//         margin:8,
-//         color:'#EAF0F1'
-
-//     }
-// })
-
 
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView, StatusBar } from 'react-native';
 
 const TicTacToe = () => {
   const [board, setBoard] = useState(Array(9).fill(null));
@@ -88,7 +54,9 @@ const TicTacToe = () => {
   );
 
   return (
-    <View style={styles.container}>
+      
+      <View style={styles.container}>
+        <StatusBar  barStyle={'light-content'} backgroundColor={'black'}  > </StatusBar>
       <View style={styles.Banner}>
       <Text style={styles.title}>Tic Tac Toe</Text>
       </View >
@@ -96,46 +64,51 @@ const TicTacToe = () => {
         {board.map((_, index) => renderSquare(index))}
       </View>
       {winner ? <Text style={styles.winnerText}>Winner: {winner}</Text> : null}
-      <TouchableOpacity style={styles.resetButton} onPress={resetGame}>
-        <Text style={styles.resetButtonText}>Restart Game</Text>
+      <TouchableOpacity 
+          style={styles.resetButton} 
+          onPress={resetGame}>
+        <Text style={styles.resetButtonText}> Restart Game </Text>
       </TouchableOpacity>
+      
     </View>
+  
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-   width:413,
-   height:839,
+
    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f37b91', 
+    backgroundColor: 'red', 
+    flex:1,
   },
 
+
   Banner:{
-    width:400,
-    height:50,
-   
+    flex:0.25,
+    width:'90%',
+    // height:10,
     backgroundColor:'#0A3D62',         
     margin:30,
-    marginTop:0,
+    marginTop:-40,
     borderRadius:15,
     borderBottomRightRadius:80,
     borderTopLeftRadius:80 ,
     elevation:9  
   },
   title: {
-    fontSize: 40,
+    fontSize: 35,
     fontWeight: 'bold',
     color: '#fff',
-    marginBottom: 0,
-    textAlign:'center'
+    marginTop:1,
+    textAlign:'center',
+    
     
   },
   board: {
     width: 300,
     height: 300,
-   
     flexDirection: 'row',
     flexWrap: 'wrap',
     backgroundColor: '#6a4dc8', 
@@ -167,9 +140,11 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
     marginTop: 20,
+    marginBottom:"-15%"
   },
   resetButton: {
     marginTop: 50,
+    marginBottom:'-10%',
     padding: 15,
     backgroundColor: '#ff6f61',
     borderRadius: 25, 
@@ -179,6 +154,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 18,
   },
-});
+})
 
 export default TicTacToe;

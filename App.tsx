@@ -6,22 +6,11 @@ import TicTacToe from './src/TicTacToe'
 
 const App = () => {
   return (
-    <View>
+   
+    <View style={{flex:1}}>
       <TicTacToe />
-    
-
    </View>
+   
   )
 }
-
-const styles = StyleSheet.create({
-Heading:{
-  textAlign: 'center',
-  fontSize: 24,
-  fontWeight:'bold',
-  color:'black',
-  fontStyle:'italic' 
-},
-})
-
 export default App
