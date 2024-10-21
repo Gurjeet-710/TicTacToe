@@ -2,7 +2,13 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView, StatusBar } from 'react-native';
 
-const TicTacToe = () => {
+import { NavigationContainer } from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack'
+import { useNavigation } from '@react-navigation/native'
+
+
+
+function TicTacToeX ({navigation}) {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [isXNext, setIsXNext] = useState(true);
   const [winner, setWinner] = useState(null);
@@ -54,12 +60,14 @@ const TicTacToe = () => {
   );
 
   return (
+      <View style={{flex:1 , backgroundColor: 'red', }}>
       
-      <View style={styles.container}>
-        <StatusBar  barStyle={'light-content'} backgroundColor={'black'}  > </StatusBar>
+        <StatusBar  barStyle={'light-content'} backgroundColor={'black'}  ></StatusBar>
+        
       <View style={styles.Banner}>
       <Text style={styles.title}>Tic Tac Toe</Text>
       </View >
+      <View style={styles.container}>
       <View style={styles.board}>
         {board.map((_, index) => renderSquare(index))}
       </View>
@@ -71,7 +79,7 @@ const TicTacToe = () => {
       </TouchableOpacity>
       
     </View>
-  
+    </View>
   );
 }
 
@@ -80,18 +88,18 @@ const styles = StyleSheet.create({
 
    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'red', 
-    flex:1,
+   
+    flex:0.70,
   },
 
 
   Banner:{
-    flex:0.25,
+    flex:0.07,
     width:'90%',
     // height:10,
     backgroundColor:'#0A3D62',         
     margin:30,
-    marginTop:-40,
+    marginTop:30,
     borderRadius:15,
     borderBottomRightRadius:80,
     borderTopLeftRadius:80 ,
@@ -140,7 +148,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
     marginTop: 20,
-    marginBottom:"-15%"
+    marginBottom:"5%"
   },
   resetButton: {
     marginTop: 50,
@@ -156,4 +164,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default TicTacToe;
+export default TicTacToeX;
