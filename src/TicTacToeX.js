@@ -2,11 +2,6 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView, StatusBar } from 'react-native';
 
-import { NavigationContainer } from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack'
-import { useNavigation } from '@react-navigation/native'
-
-
 
 function TicTacToeX ({navigation}) {
   const [board, setBoard] = useState(Array(9).fill(null));
@@ -36,7 +31,6 @@ function TicTacToeX ({navigation}) {
 
   const handlePress = (index) => {
     if (winner || board[index]) return;
-   
     const newBoard = [...board];
     newBoard[index] = isXNext ? 'X' : 'O';
     setBoard(newBoard);
@@ -60,10 +54,8 @@ function TicTacToeX ({navigation}) {
   );
 
   return (
-      <View style={{flex:1 , backgroundColor: 'red', }}>
-      
+      <View style={{flex:1 , backgroundColor: '#9b59b6', }}>
         <StatusBar  barStyle={'light-content'} backgroundColor={'black'}  ></StatusBar>
-        
       <View style={styles.Banner}>
       <Text style={styles.title}>Tic Tac Toe</Text>
       </View >
@@ -85,18 +77,13 @@ function TicTacToeX ({navigation}) {
 
 const styles = StyleSheet.create({
   container: {
-
    justifyContent: 'center',
-    alignItems: 'center',
-   
+    alignItems: 'center',  
     flex:0.70,
   },
-
-
   Banner:{
     flex:0.07,
     width:'90%',
-    // height:10,
     backgroundColor:'#0A3D62',         
     margin:30,
     marginTop:30,
@@ -110,16 +97,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#fff',
     marginTop:1,
-    textAlign:'center',
-    
-    
+    textAlign:'center', 
   },
   board: {
     width: 300,
     height: 300,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    backgroundColor: '#6a4dc8', 
+    backgroundColor: '#f3f0f8', 
     borderRadius: 20, 
     padding: 10,
     elevation: 5,

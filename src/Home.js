@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         textAlign:'center',
         padding:5,
-        color:'#218F76',
+        color:'#8e44ad',
         textShadowRadius:10,
         textShadowColor:'#FFF222',
 
@@ -75,15 +75,16 @@ const styles = StyleSheet.create({
         // width:'110%',
         maxWidth:'100%',
         height:'100%',
-        backgroundColor:'#47535E',
+        backgroundColor:'#cdd1f4',
         borderTopEndRadius:160,
         borderTopLeftRadius:160
 
     },
     Txt:{
         fontSize:20,
-        color:'white',
+        color:'#043b5c',
         textAlign:'center',
+        fontWeight:'700',
         padding:20,
         marginTop:15
 
@@ -102,8 +103,8 @@ const styles = StyleSheet.create({
         width:70,
         height:70,
         borderWidth:3,
-        borderColor:"#1BCA9B",
-        backgroundColor:'#218F76',
+        borderColor:"#043b5c",
+        backgroundColor:'#8e44ad',
         borderRadius:50,
         margin:35,
         overflow:'visible'

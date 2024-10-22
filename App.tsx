@@ -1,7 +1,8 @@
 import { View, Text ,StyleSheet,ScrollView} from 'react-native'
 import React from 'react'
 
-import TicTacToe from './src/TicTacToeX'
+import TicTacToeX from './src/TicTacToeX'
+import TicTacToeO from './src/TicTacToeO'
 import Home from './src/Home'
 
 import {NavigationContainer} from '@react-navigation/native'
@@ -21,11 +22,11 @@ const App = () => {
         />
         <Stack.Screen
           name='TicTacToeX'
-          component={TicTacToe}
+          component={TicTacToeX}
           />
           <Stack.Screen
           name='TicTacToeO'
-          component={TicTacToe}
+          component={TicTacToeO}
           />
 
       </Stack.Navigator>
